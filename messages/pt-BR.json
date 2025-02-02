@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "title": "Chat IA",
+    "description": "Chat bot com  SDK da Vercel"
+  },
+  "Dashboard": {
+    "title": "Dashboard"
+  }
+}

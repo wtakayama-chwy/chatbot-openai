@@ -1,0 +1,34 @@
+{
+  "AppSidebar": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "title": "Application"
+  },
+  "Chat": {
+    "title": "Chat AI",
+    "description": "Chat bot with Vercel SDK",
+    "messages": "messages",
+    "error_message": "Error loading messages",
+    "input": {
+      "placeholder": "How can I help you?"
+    },
+    "button": {
+      "reset_db": "Reset database",
+      "migrate": "Run dummy migration",
+      "send": "Send"
+    },
+    "user": "Human",
+    "ai": "AI",
+    "assistant": "AI assistant"
+  },
+  "ChatHistoryPage": {
+    "title": "Message History"
+  },
+  "NotFound": {
+    "title": "Not Found",
+    "description": "Oops... Could not find requested resource",
+    "button": {
+      "back": "Back to Home"
+    }
+  }
+}
