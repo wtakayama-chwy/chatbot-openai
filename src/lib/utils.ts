@@ -8,9 +8,3 @@ export function cn(...inputs: ClassValue[]) {
 export function isLocalhost(req: Request) {
   return req.headers.get('host')?.startsWith('localhost');
 }
-
-export function isClientLocalhost() {
-  return (
-    typeof window !== 'undefined' && window.location.hostname === 'localhost'
-  );
-}

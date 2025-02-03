@@ -17,10 +17,11 @@ import { Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { ChatMessages } from './ChatMessages';
-import { isClientLocalhost } from '@/lib/utils';
+import { useIsClient } from '@/hooks/use-is-client';
 
 export const Chat = () => {
   const t = useTranslations('Chat');
+  const isClient = useIsClient();
 
   const {
     messages = [],
@@ -86,7 +87,7 @@ export const Chat = () => {
         <CardTitle>{t('title')}</CardTitle>
         <CardDescription className="flex items-center gap-2">
           <span>{t('description')}</span>
-          {isClientLocalhost() && (
+          {isClient && (
             <>
               <Button
                 className="w-fit"

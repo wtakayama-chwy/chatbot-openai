@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
+import { IsClientCtxProvider } from '@/hooks/use-is-client';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,16 +35,18 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarTrigger />
+        <IsClientCtxProvider>
+          <NextIntlClientProvider messages={messages}>
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarTrigger />
 
-            <main className="h-screen min-h-screen w-full bg-slate-600 p-2 lg:p-8">
-              {children}
-            </main>
-          </SidebarProvider>
-        </NextIntlClientProvider>
+              <main className="h-screen min-h-screen w-full bg-slate-600 p-2 lg:p-8">
+                {children}
+              </main>
+            </SidebarProvider>
+          </NextIntlClientProvider>
+        </IsClientCtxProvider>
       </body>
     </html>
   );
