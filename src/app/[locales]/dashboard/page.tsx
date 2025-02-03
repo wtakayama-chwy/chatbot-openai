@@ -35,8 +35,9 @@ const ChatHistoryPage = async () => {
     <div className="flex h-full items-center justify-center">
       <Card className="mx-8 w-[600px] p-8">
         <CardTitle className="mb-8">{t('title')}</CardTitle>
-        <CardContent>
+        <CardContent className="px-0">
           <ChatMessages
+            emptyPlaceholder={t('nothing_to_see')}
             messages={messages}
             hasError={Boolean(error)}
             isLoading={false}

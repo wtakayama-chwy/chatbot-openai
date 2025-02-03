@@ -8,14 +8,20 @@ interface ChatMessagesProps {
   hasError: boolean;
   messages: UiMessage[];
   isLoading: boolean;
+  emptyPlaceholder?: string;
 }
 
 export const ChatMessages = ({
   hasError,
   messages,
   isLoading,
+  emptyPlaceholder,
 }: ChatMessagesProps) => {
   const t = useTranslations('Chat');
+
+  if (messages.length === 0 && !isLoading && emptyPlaceholder) {
+    return <h2 className="text-slate-600">{emptyPlaceholder}</h2>;
+  }
 
   return hasError ? (
     <h2 className="text-red-600">{t('error_message')}</h2>

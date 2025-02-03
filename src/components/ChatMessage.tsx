@@ -28,7 +28,7 @@ export const ChatMessage = ({ message }: ChatMessageProps) => {
       {isAssistant && (
         <Avatar>
           <AvatarFallback>{t('ai')}</AvatarFallback>
-          <AvatarImage src="https://github.com/rocketseat.png" />
+          <AvatarImage src="https://github.com/shadcn.png" />
         </Avatar>
       )}
       <div className="w-full leading-relaxed">

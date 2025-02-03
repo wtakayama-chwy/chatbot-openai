@@ -22,7 +22,8 @@
     "assistant": "AI assistant"
   },
   "ChatHistoryPage": {
-    "title": "Message History"
+    "title": "Message History",
+    "nothing_to_see": "Nothing to see here"
   },
   "NotFound": {
     "title": "Not Found",
