@@ -82,7 +82,7 @@ export const Chat = () => {
   }, []);
 
   return (
-    <Card className="mx-8 w-[600px]">
+    <Card className="mx-8 w-[340px] md:w-[600px]">
       <CardHeader>
         <CardTitle>{t('title')}</CardTitle>
         <CardDescription className="flex flex-col items-baseline">
@@ -94,6 +94,7 @@ export const Chat = () => {
                 <Button
                   className="w-fit"
                   variant="secondary"
+                  size="sm"
                   onClick={async () => await runMigration()}
                 >
                   {t('button.migrate')}
@@ -101,6 +102,7 @@ export const Chat = () => {
                 <Button
                   className="w-fit"
                   variant="destructive"
+                  size="sm"
                   onClick={async () => await resetDb()}
                 >
                   {t('button.reset_db')}

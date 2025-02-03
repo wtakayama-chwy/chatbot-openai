@@ -26,7 +26,7 @@ export const ChatMessages = ({
   return hasError ? (
     <h2 className="text-red-600">{t('error_message')}</h2>
   ) : (
-    <ScrollArea className="h-[600px] w-full pr-4">
+    <ScrollArea className="h-[420px] w-full pr-4 md:h-[600px]">
       {isLoading ? (
         <SkeletonMessage />
       ) : (
