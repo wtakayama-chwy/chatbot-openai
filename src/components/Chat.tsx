@@ -85,26 +85,28 @@ export const Chat = () => {
     <Card className="mx-8 w-[600px]">
       <CardHeader>
         <CardTitle>{t('title')}</CardTitle>
-        <CardDescription className="flex items-center gap-2">
+        <CardDescription className="flex flex-col items-baseline">
           <span>{t('description')}</span>
-          {isClient && (
-            <>
-              <Button
-                className="w-fit"
-                variant="secondary"
-                onClick={async () => await runMigration()}
-              >
-                {t('button.migrate')}
-              </Button>
-              <Button
-                className="w-fit"
-                variant="destructive"
-                onClick={async () => await resetDb()}
-              >
-                {t('button.reset_db')}
-              </Button>
-            </>
-          )}
+          {isClient &&
+            typeof window !== 'undefined' &&
+            window.location.host.includes('localhost') && (
+              <div className="flex items-center gap-2">
+                <Button
+                  className="w-fit"
+                  variant="secondary"
+                  onClick={async () => await runMigration()}
+                >
+                  {t('button.migrate')}
+                </Button>
+                <Button
+                  className="w-fit"
+                  variant="destructive"
+                  onClick={async () => await resetDb()}
+                >
+                  {t('button.reset_db')}
+                </Button>
+              </div>
+            )}
         </CardDescription>
       </CardHeader>
       <CardContent data-testid="chat-content">
