@@ -37,6 +37,8 @@ export const Chat = () => {
     api: '/api/chat',
   });
 
+  const isButtonDisabled = isSending || isLoading;
+
   const runMigration = async () => {
     try {
       const response = await fetch('/api/chat/storage');
@@ -109,7 +111,7 @@ export const Chat = () => {
           </Button>
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent data-testid="chat-content">
         <ChatMessages
           messages={allMessages}
           hasError={Boolean(error)}
@@ -123,7 +125,7 @@ export const Chat = () => {
             value={input}
             onChange={handleInputChange}
           />
-          <Button type="submit" disabled={isSending}>
+          <Button type="submit" disabled={isButtonDisabled}>
             {isSending && <Loader2 className="animate-spin" />}
             {t('button.send')}
           </Button>

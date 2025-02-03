@@ -17,8 +17,7 @@ import Link from 'next/link';
 export const AppSidebar = () => {
   const t = useTranslations('AppSidebar');
 
-  // Menu items.
-  const items = [
+  const menuItems = [
     {
       title: t('home'),
       url: '/',
@@ -31,12 +30,6 @@ export const AppSidebar = () => {
     },
   ];
 
-  // if (isMobile) {
-  //   return (
-
-  //   )
-  // }
-
   return (
     <Sidebar title={t('title')}>
       <SidebarHeader />
@@ -45,7 +38,7 @@ export const AppSidebar = () => {
           <SidebarGroupLabel>{t('title')}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link href={item.url}>
