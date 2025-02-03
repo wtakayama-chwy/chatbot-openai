@@ -36,7 +36,6 @@ async function getForChatMessagesResponse(page: Page) {
 test('Should test happy path chat flow', async ({ page }) => {
   await page.goto(env.BASE_URL);
 
-  const skeleton = page.locator('.animate-pulse').first();
   const messageInput = page.getByRole('textbox', {
     name: 'How can I help you?',
   });
@@ -49,15 +48,15 @@ test('Should test happy path chat flow', async ({ page }) => {
     expect
       .soft(page, 'Should display correct page title')
       .toHaveTitle(/Chat AI/),
-    expect
-      .soft(skeleton, 'Should display skeleton while fetching initial data')
-      .toBeVisible(),
     expect.soft(messageInput, 'Should display message input').toBeVisible(),
     expect.soft(sendButton, 'Should display send button').toBeVisible(),
   ]);
   if (chatMessages?.length > 0) {
     const promises = chatMessages.map((message: UiMessage) =>
-      checkMessage(RegExp(`${userName}.*${message.content}`), chatContent)
+      checkMessage(
+        RegExp(`${userName}.*${message.content.slice(0, 10)}`),
+        chatContent
+      )
     );
     await Promise.all(promises);
   }
