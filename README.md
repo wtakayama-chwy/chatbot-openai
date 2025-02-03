@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Overview
 
-## Getting Started
+This project is designed to create a chatbot AI that integrates with OpenAI's powerful language model (gpt-4-turbo). It aims to provide intelligent and context-aware conversational capabilities, making it significant for applications in customer support, virtual assistants, and interactive user experiences.
 
-First, run the development server:
+# Installation Instructions
+
+To install this project, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/wtakayama-chwy/chatbot-openai
+   ```
+2. Navigate to the project directory
+3. Install the necessary dependencies:
+   ```bash
+   pnpm install
+   ```
+
+# Usage Guidelines
+
+To use this project locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Features
+https://github.com/user-attachments/assets/a53b620b-52cb-40cc-a248-a0d3b87b2d4d
+- **OpenAI chat:** Integrates with OpenAI's language models to provide intelligent and context-aware responses. 
+- **Message history:** Stores and retrieves past conversations to maintain context and improve user interactions.
+- **E2E test:** End-to-end testing to ensure the chatbot functions correctly from start to finish. To run E2E test:
+```bash
+pnpm e2e:ui
+```
+![e2e-test](https://github.com/user-attachments/assets/16b84921-530e-4ca7-9dff-8b4e7681c031)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Additional Information
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Currently, data persistence is limited to the local environment using SQLite.
+- The deployed version is experiencing issues related to the API_KEY, and is currently non-functional. The deployment was conducted solely to demonstrate the deployment process.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Deployed version: https://chatbot-openai-psi.vercel.app/en-US
+![deployed-vercel](https://github.com/user-attachments/assets/5bca5301-8843-4ba0-aaf2-6f2d98e5538f)
