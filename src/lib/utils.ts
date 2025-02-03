@@ -11,6 +11,6 @@ export function isLocalhost(req: Request) {
 
 export function isClientLocalhost() {
   return (
-    window.location.hostname === 'localhost' && typeof window !== 'undefined'
+    typeof window !== 'undefined' && window.location.hostname === 'localhost'
   );
 }
