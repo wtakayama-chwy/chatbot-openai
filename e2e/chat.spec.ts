@@ -1,5 +1,4 @@
 import type { UiMessage } from '@/_types';
-import { env } from '@/env';
 import { test, expect, Locator, Page } from '@playwright/test';
 
 const randomNumber = Math.random();
@@ -34,7 +33,7 @@ async function getForChatMessagesResponse(page: Page) {
 }
 
 test('Should test happy path chat flow', async ({ page }) => {
-  await page.goto(env.BASE_URL);
+  await page.goto('/');
 
   const messageInput = page.getByRole('textbox', {
     name: 'How can I help you?',

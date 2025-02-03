@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { z } from 'zod';
 
 const envSchema = z.object({
+  OPENAI_API_KEY: z.string(),
   BASE_URL: z.string().default('http://localhost:3000'),
   NODE_ENV: z.enum(['development', 'production']).default('development'),
 });
